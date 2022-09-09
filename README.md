@@ -96,11 +96,20 @@ git log --oneline
 ```bash 
 git branch
 ```
+##### Shows local and remote branches and info.
+```bash 
+git branch -vva
+```
 
 ##### Creates a new branch.
 ```bash 
 git checkout -b name
 ```
+##### Changes to branch .
+```bash 
+git switch branch name
+```
+
 
 ##### Add changes of branchName to current branch.
 ```bash 
@@ -121,5 +130,16 @@ git push origin main
 ```bash 
 git push -u origin main
 ```
+##### Show, remove , rename the remote repos
+```bash 
+git remote -v 
+```
+```bash 
+git remove name 
+```
+```bash 
+git remove name newname 
+```
+
 
 
