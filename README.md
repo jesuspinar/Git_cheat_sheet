@@ -1,4 +1,4 @@
-# Git_cheat_sheet
+# Git introduction
 > Beginners guide that helps with git commands. 
 ## Global config
 ##### Add your name.
