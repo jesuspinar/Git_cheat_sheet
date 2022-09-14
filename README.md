@@ -121,9 +121,13 @@ git merge branchName
 git remote add origin www.github.com
 ```
 
-##### Publishes the changes into branch main at repo on the server.
+##### Publishes the changes into branchName at repo on the server.
 ```bash  
-git push origin main
+git push origin branchName
+```  
+##### Publishes the changes into branch main if local and remote branch name are different.
+```bash  
+git push origin branchLocalName:branchRemoteName
 ```  
 
 ##### Creates a branch main and publishes changes into it at repo on the server.
