@@ -105,9 +105,15 @@ git branch -vva
 ```bash 
 git checkout -b name
 ```
+
+##### Deletes a local branch.
+```bash 
+git branch -d branchName
+```
+
 ##### Changes to branch .
 ```bash 
-git switch branch name
+git switch branchName
 ```
 
 
