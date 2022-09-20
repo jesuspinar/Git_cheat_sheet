@@ -109,6 +109,7 @@ git checkout -b name
 ##### Deletes a local branch.
 ```bash 
 git branch -d branchName
+git branch --delete branchName
 ```
 
 ##### Changes to branch .
@@ -145,11 +146,13 @@ git push -u origin main
 git remote -v 
 ```
 ```bash 
-git remove name 
+git remote rm name 
 ```
 ```bash 
-git remove name newname 
+git remote remove name newname 
 ```
 
-
-
+##### After pulling shows changes .
+```bash 
+git whatchanged
+```
