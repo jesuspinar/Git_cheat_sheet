@@ -1,158 +1,208 @@
-# Git introduction
-> Beginners guide that helps with git commands. 
-## Global config
-##### Add your name.
-```bash 
+# Git Introduction
+> A beginner's guide to essential Git commands and configurations.
+
+This guide provides a collection of common Git commands, along with explanations on how to configure and use Git for version control. Whether you're just getting started or need a reference for frequently used commands, this guide is designed to help.
+
+---
+
+## Table of Contents
+1. [Global Configuration](#global-configuration)
+   - [Set your name](#set-your-name)
+   - [Set your email](#set-your-email)
+   - [Set default text editor](#set-default-text-editor)
+   - [Open Git config settings](#open-git-config-settings)
+   - [Set line ending preferences](#set-line-ending-preferences)
+2. [Useful Git Commands](#useful-git-commands)
+   - [Initialize a Git repository](#initialize-a-git-repository)
+   - [Stage changes](#stage-changes)
+   - [Make a commit](#make-a-commit)
+   - [Remove files](#remove-files)
+   - [Rename or move files](#rename-or-move-files)
+   - [View status](#view-status)
+   - [View differences](#view-differences)
+   - [View commit history](#view-commit-history)
+   - [Branch management](#branch-management)
+   - [Merging changes](#merging-changes)
+   - [Working with remotes](#working-with-remotes)
+
+---
+
+## Global Configuration
+
+### Set your name
+To configure Git to use your name in commits, run:
+```bash
 git config --global user.name "Your name"
 ```
 
-##### Add your email.
-```bash 
-git config --global user.mail "name@email.com"
+### Set your email
+To set the email associated with your Git commits:
+```bash
+git config --global user.email "name@email.com"
 ```
 
-##### Adds default text editor.
-```bash 
+### Set default text editor
+If you want to set a default text editor, such as VSCode, for commit messages:
+```bash
 git config --global core.editor "code --wait"
 ```
 
-##### Opens config settings.
-```bash 
+### Open Git config settings
+To open and edit Git’s global configuration settings:
+```bash
 git config --global -e
 ```
 
-##### Specify the return type just one enter. *Linux|Mac*
-```bash 
+### Set line ending preferences
+For **Linux/Mac** systems (use Unix-style line endings):
+```bash
 git config --global core.autocrlf input
-``` 
+```
 
-##### Specify the return type just one enter. *Windows*
-```bash 
+For **Windows** systems (use Windows-style line endings):
+```bash
 git config --global core.autocrlf true
-``` 
+```
 
-##### See other options.
-```bash 
+For other options, you can view the Git configuration help:
+```bash
 git config -h
 ```
 
-## Usefull commands 
-##### Initializes a git repo in local folder.
-```bash 
+---
+
+## Useful Git Commands
+
+### Initialize a Git repository
+To initialize a new Git repository in the current folder:
+```bash
 git init
 ```
 
-##### Adds all changes to stage (*deleted, modified and new files or dirs*).
-```bash 
+### Stage changes
+To stage all changes (deleted, modified, and new files):
+```bash
 git add .
-``` 
+```
 
-##### Make a commit and specify a message.
-```bash 
+### Make a commit
+To create a new commit with a message:
+```bash
 git commit -m "Initial commit"
 ```
 
-##### Delete file or dir from the working tree the file.
-```bash 
-git rm file
+### Remove files
+To remove a file from your working tree and stage the removal:
+```bash
+git rm <file>
 ```
 
-##### Renaming or moving files or dirs.
-```bash 
-git mv filename filename
-``` 
+### Rename or move files
+To rename or move a file:
+```bash
+git mv <old-filename> <new-filename>
+```
 
-##### Shows the changes at stage.
-```bash 
+### View status
+To check the status of your working directory:
+```bash
 git status
 ```
 
-##### Shows the changes at stage, clean.
-```bash 
+For a more concise, cleaner output of the status:
+```bash
 git status -s
 ```
 
-##### Compare the changes.
-```bash 
+### View differences
+To view the unstaged differences in your working directory:
+```bash
 git diff
-``` 
+```
 
-##### Compares the changes on stage.
-```bash 
+To compare the changes already staged for commit:
+```bash
 git diff --staged
 ```
 
-##### Review the commit history of the repository.
-```bash 
+### View commit history
+To view the commit history:
+```bash
 git log
-``` 
+```
 
-##### Review the commit history repo, clean.
-```bash 
+For a simplified, one-line-per-commit view:
+```bash
 git log --oneline
 ```
 
-##### Shows the actual brach.
-```bash 
-git branch
-```
-##### Shows local and remote branches and info.
-```bash 
-git branch -vva
+### Branch management
+
+- To view the current branch:
+  ```bash
+  git branch
+  ```
+
+- To view all local and remote branches:
+  ```bash
+  git branch -vva
+  ```
+
+- To create and switch to a new branch:
+  ```bash
+  git checkout -b <branch-name>
+  ```
+
+- To delete a local branch:
+  ```bash
+  git branch -d <branch-name>
+  ```
+
+- To switch between branches:
+  ```bash
+  git switch <branch-name>
+  ```
+
+### Merging changes
+To merge changes from one branch into your current branch:
+```bash
+git merge <branch-name>
 ```
 
-##### Creates a new branch.
-```bash 
-git checkout -b name
-```
+### Working with remotes
 
-##### Deletes a local branch.
-```bash 
-git branch -d branchName
-git branch --delete branchName
-```
+- To add a remote repository:
+  ```bash
+  git remote add origin https://github.com/your/repo.git
+  ```
 
-##### Changes to branch .
-```bash 
-git switch branchName
-```
+- To push changes to a remote branch:
+  ```bash
+  git push origin <branch-name>
+  ```
 
+- If local and remote branch names are different:
+  ```bash
+  git push origin <local-branch>:<remote-branch>
+  ```
 
-##### Add changes of branchName to current branch.
-```bash 
-git merge branchName
-```
+- To create and push to a `main` branch:
+  ```bash
+  git push -u origin main
+  ```
 
-##### Indicates remote server to push changes.
-```bash 
-git remote add origin www.github.com
-```
+- To list, remove, or rename remote repositories:
+  ```bash
+  git remote -v
+  git remote rm <name>
+  git remote rename <oldname> <newname>
+  ```
 
-##### Publishes the changes into branchName at repo on the server.
-```bash  
-git push origin branchName
-```  
-##### Publishes the changes into branch main if local and remote branch name are different.
-```bash  
-git push origin branchLocalName:branchRemoteName
-```  
+- After pulling changes, to view the history of changes:
+  ```bash
+  git whatchanged
+  ```
 
-##### Creates a branch main and publishes changes into it at repo on the server.
-```bash 
-git push -u origin main
-```
-##### Show, remove , rename the remote repos
-```bash 
-git remote -v 
-```
-```bash 
-git remote rm name 
-```
-```bash 
-git remote remove name newname 
-```
+---
 
-##### After pulling shows changes .
-```bash 
-git whatchanged
-```
+For more details and advanced options, refer to the [Git documentation](https://git-scm.com/doc).
